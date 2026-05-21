@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MamaMetrics Form</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 30px;
+
+        overflow-x: hidden;
+      }
+
+      .bg-circle {
+        position: absolute;
+
+        width: 300px;
+        height: 300px;
+
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        filter: blur(60px);
+
+        animation: float 6s infinite alternate;
+      }
+
+      .bg1 {
+        top: -100px;
+        left: -100px;
+      }
+
+      .bg2 {
+        bottom: -100px;
+        right: -100px;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(0px);
+        }
+
+        to {
+          transform: translateY(40px);
+        }
+      }
+
+      .container {
+        position: relative;
+
+        width: 100%;
+        max-width: 850px;
+
+        padding: 40px;
+
+        border-radius: 30px;
+
+        background: rgba(255, 255, 255, 0.12);
+
+        backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+
+        color: white;
+      }
+
+      .logo {
+        text-align: center;
+
+        font-size: 55px;
+
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        text-align: center;
+
+        font-size: 38px;
+
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        text-align: center;
+
+        opacity: 0.8;
+
+        margin-bottom: 35px;
+
+        font-size: 15px;
+      }
+
+      .grid-inputs {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 22px;
+      }
+
+      .input-box {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-box label {
+        margin-bottom: 8px;
+
+        font-size: 14px;
+
+        font-weight: 500;
+      }
+
+      .input-box input {
+        padding: 14px;
+
+        border: none;
+
+        border-radius: 14px;
+
+        background: rgba(255, 255, 255, 0.15);
+
+        color: white;
+
+        font-size: 15px;
+
+        outline: none;
+
+        transition: 0.3s;
+      }
+
+      .input-box input::placeholder {
+        color: #ddd;
+      }
+
+      .input-box input:focus {
+        background: rgba(255, 255, 255, 0.25);
+
+        transform: scale(1.02);
+
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      }
+
+      .magic-btn {
+        margin-top: 35px;
+
+        width: 100%;
+
+        padding: 16px;
+
+        border: none;
+
+        border-radius: 16px;
+
+        background: linear-gradient(45deg, #ff4b91, #ff7676);
+
+        color: white;
+
+        font-size: 18px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .magic-btn:hover {
+        transform: translateY(-3px);
+
+        box-shadow: 0 12px 25px rgba(255, 118, 118, 0.4);
+      }
+
+      .footer-text {
+        margin-top: 25px;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        opacity: 0.7;
+      }
+
+      @media (max-width: 768px) {
+        .grid-inputs {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding: 25px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-circle bg1"></div>
+    <div class="bg-circle bg2"></div>
+
+    <div class="container">
+      <div class="logo">👶</div>
+
+      <h1>MamaMetrics</h1>
+
+      <p class="subtitle">Advanced Maternal Health Prediction Form</p>
+
+      <form method="POST">
+        <div class="grid-inputs">
+          <div class="input-box">
+            <label>Patient Name</label>
+
+            <input
+              type="text"
+              name="patient_name"
+              placeholder="Enter patient name"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>Mother Age</label>
+
+            <input
+              type="number"
+              name="age_mother"
+              placeholder="Enter age"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>BMI</label>
+
+            <input type="text" name="bmi" placeholder="Enter BMI" required />
+          </div>
+
+          <div class="input-box">
+            <label>Hemoglobin</label>
+
+            <input
+              type="text"
+              name="hemoglobin"
+              placeholder="Enter hemoglobin level"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>Stress Level (1-10)</label>
+
+            <input
+              type="number"
+              name="stress_level"
+              placeholder="Enter stress level"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>Work Hours</label>
+
+            <input
+              type="number"
+              name="work_hours"
+              placeholder="Enter work hours"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>Smoking (0/1)</label>
+
+            <input
+              type="number"
+              name="smoking_p"
+              placeholder="0 = No, 1 = Yes"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>Alcohol (0/1)</label>
+
+            <input
+              type="number"
+              name="alcohol_p"
+              placeholder="0 = No, 1 = Yes"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="magic-btn" type="submit">Generate Prediction</button>
+      </form>
+
+      <div class="footer-text">
+        MamaMetrics • Maternal Healthcare Analytics Platform
+      </div>
+    </div>
+  </body>
+</html>

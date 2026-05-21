@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body{font-family:Poppins;background:linear-gradient(45deg,#0f0c29,#302b63,#24243e);margin:0;padding:20px;color:white}
+.container{max-width:900px;margin:auto}
+table{width:100%;border-collapse:collapse;background:white;color:black;border-radius:10px;overflow:hidden}
+th,td{padding:12px;text-align:center}
+th{background:#6a11cb;color:white}
+tr:nth-child(even){background:#f2f2f2}
+.nav{display:flex;justify-content:space-between;margin-bottom:15px}
+.nav a{background:#2575fc;padding:8px 12px;border-radius:6px;color:white;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="nav">
+<a href="/form">+ Add New</a>
+<a href="/login">Logout</a>
+</div>
+<h2>Predictions Dashboard</h2>
+<table>
+<tr>
+<th>Risk</th>
+<th>NICU</th>
+<th>C-Section</th>
+<th>Preterm</th>
+<th>Weight</th>
+</tr>
+{% for r in data %}
+<tr>
+<td>{{ r.risk_result }}</td>
+<td>{{ r.nicu_risk }}</td>
+<td>{{ r.C_section }}</td>
+<td>{{ r.preterm }}</td>
+<td>{{ r.predicted_weight }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>

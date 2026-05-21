@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(135deg,#141e30,#243b55);
+
+overflow:hidden;
+}
+
+.container{
+
+width:400px;
+
+padding:40px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(18px);
+
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+
+border:1px solid rgba(255,255,255,0.2);
+
+color:white;
+
+text-align:center;
+}
+
+.logo{
+font-size:40px;
+margin-bottom:10px;
+}
+
+h1{
+
+font-size:30px;
+margin-bottom:10px;
+}
+
+.subtitle{
+
+font-size:14px;
+opacity:0.8;
+margin-bottom:30px;
+}
+
+.input-box{
+
+margin-bottom:20px;
+text-align:left;
+}
+
+.input-box label{
+
+display:block;
+margin-bottom:8px;
+font-size:14px;
+}
+
+.input-box input{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:rgba(255,255,255,0.15);
+
+color:white;
+
+font-size:15px;
+
+outline:none;
+
+transition:0.3s;
+}
+
+.input-box input::placeholder{
+color:#ddd;
+}
+
+.input-box input:focus{
+
+background:rgba(255,255,255,0.25);
+
+transform:scale(1.02);
+}
+
+button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(45deg,#6a11cb,#2575fc);
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 20px rgba(37,117,252,0.4);
+}
+
+.login-link{
+
+margin-top:20px;
+font-size:14px;
+}
+
+.login-link a{
+
+color:#9dc6ff;
+
+text-decoration:none;
+
+font-weight:bold;
+}
+
+.login-link a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">💖</div>
+
+<h1>Create Account</h1>
+
+<p class="subtitle">
+
+Join MamaMetrics Healthcare Platform
+
+</p>
+
+<form method="POST">
+
+<div class="input-box">
+
+<label>Full Name</label>
+
+<input type="text"
+name="name"
+placeholder="Enter your name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Email</label>
+
+<input type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<input type="password"
+name="password"
+placeholder="Create password"
+required>
+
+</div>
+
+<button type="submit">
+
+Register
+
+</button>
+
+</form>
+
+<div class="login-link">
+
+Already have an account?
+
+<a href="/">Login</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

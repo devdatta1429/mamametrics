@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body{font-family:Poppins;background:linear-gradient(45deg,#0f0c29,#302b63,#24243e);margin:0;padding:20px;color:white}
+.container{max-width:600px;margin:auto;background:rgba(255,255,255,0.95);padding:30px;border-radius:20px;color:black}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+input{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc}
+button{margin-top:20px;width:100%;padding:14px;background:#6a11cb;color:white;border:none;border-radius:10px;font-weight:bold}
+.nav{display:flex;justify-content:space-between;margin-bottom:15px}
+.nav a{text-decoration:none;color:#2575fc;font-weight:500}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="nav">
+<a href="/dashboard">← Dashboard</a>
+<a href="/login">Logout</a>
+</div>
+<h2>Enter Details</h2>
+<form method="POST">
+<div class="grid">
+<input type="number" name="age_mother" placeholder="Age">
+<input type="text" name="bmi" placeholder="BMI">
+<input type="text" name="hemoglobin" placeholder="Hemoglobin">
+<input type="number" name="stress_level" placeholder="Stress Level">
+<input type="number" name="work_hours" placeholder="Work Hours">
+<input type="number" name="smoking_p" placeholder="Smoking (0/1)">
+<input type="number" name="alcohol_p" placeholder="Alcohol (0/1)">
+</div>
+<button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>
