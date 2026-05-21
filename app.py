@@ -1,23 +1,32 @@
 from flask import Flask, render_template, request, redirect, session
 from db import get_connection
-from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
-import pymysql
 import os
+import mysql.connector
+import os
+from dotenv import load_dotenv
+
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-connection = pymysql.connect(
-    host=os.getenv("MYSQLHOST"),
-    user=os.getenv("MYSQLUSER"),
-    password=os.getenv("MYSQLPASSWORD"),
-    database=os.getenv("MYSQLDATABASE"),
-    port=int(os.getenv("MYSQLPORT"))
-)
+load_dotenv()
+
+def get_connection():
+
+    return mysql.connector.connect(
+        host=os.getenv("MYSQLHOST"),
+        user=os.getenv("MYSQLUSER"),
+        password=os.getenv("MYSQLPASSWORD"),
+        database=os.getenv("MYSQLDATABASE"),
+        port=int(os.getenv("MYSQLPORT"))
+    )
+
+app.secret_key = os.getenv("SECRET_KEY")
+
 
 @app.route("/")
 def home():
