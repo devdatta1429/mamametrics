@@ -1,8 +1,27 @@
 from flask import Flask, render_template, request, redirect, session
 from db import get_connection
+from flask import Flask
+from flask_cors import CORS
+from dotenv import load_dotenv
+import pymysql
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "secretkey"
+CORS(app)
+
+connection = pymysql.connect(
+    host=os.getenv("MYSQLHOST"),
+    user=os.getenv("MYSQLUSER"),
+    password=os.getenv("MYSQLPASSWORD"),
+    database=os.getenv("MYSQLDATABASE"),
+    port=int(os.getenv("MYSQLPORT"))
+)
+
+@app.route("/")
+def home():
+    return "MamaMetrics Backend Running"
 
 
 # ================= LOGIN =================
