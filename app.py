@@ -220,6 +220,59 @@ def delete_prediction(id):
     conn.commit()
 
     return redirect('/dashboard')
+
+
+# ================= DB =================
+@app.route('/importdb')
+def importdb():
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    with open("maternal_db.sql", "r", encoding="utf-8") as file:
+        sql_script = file.read()
+
+    # Remove dump-specific lines
+    cleaned_lines = []
+
+    for line in sql_script.splitlines():
+
+        line = line.strip()
+
+        if (
+            line.startswith("--")
+            or line.startswith("/*")
+            or "LOCK TABLES" in line
+            or "UNLOCK TABLES" in line
+            or "DISABLE KEYS" in line
+            or "ENABLE KEYS" in line
+        ):
+            continue
+
+        cleaned_lines.append(line)
+
+    cleaned_script = "\n".join(cleaned_lines)
+
+    # Execute SQL statements
+    statements = cleaned_script.split(";")
+
+    for statement in statements:
+
+        statement = statement.strip()
+
+        if statement:
+
+            try:
+                cursor.execute(statement)
+
+            except Exception as e:
+                print("SQL ERROR:", e)
+
+    conn.commit()
+
+    return "Database imported successfully!"
+
+
 # ================= RUN =================
 if __name__ == '__main__':
     app.run(debug=True)
